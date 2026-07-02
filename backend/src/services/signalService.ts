@@ -73,8 +73,9 @@ class SignalService {
     }
 
     const signals = db.getTable("signals");
+    const nextId = signals.length > 0 ? Math.max(...signals.map((signal) => signal.id)) + 1 : 1;
     const newSignal: SignalItem = {
-      id: signals.length + 1,
+      id: nextId,
       symbol,
       signal_type: signalType,
       price: currentPrice,

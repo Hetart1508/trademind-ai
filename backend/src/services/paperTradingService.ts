@@ -41,9 +41,10 @@ class PaperTradingService {
 
     const now = new Date().toISOString();
     const trades = db.getTable("paper_trades");
+    const nextId = trades.length > 0 ? Math.max(...trades.map((trade) => trade.id)) + 1 : 1;
 
     const newTrade: PaperTrade = {
-      id: trades.length + 1,
+      id: nextId,
       symbol,
       entry_price: entryPrice,
       quantity,

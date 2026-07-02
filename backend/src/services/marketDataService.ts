@@ -41,6 +41,7 @@ class MarketDataService {
     const watchlist = db.getTable("watchlist");
     const ticks = db.getTable("market_ticks");
     const newTicks: MarketTick[] = [];
+    const nextId = ticks.length > 0 ? Math.max(...ticks.map((tick) => tick.id)) + 1 : 1;
     const now = new Date().toISOString();
 
     // Check if we need to initialize newly added symbols
@@ -70,7 +71,7 @@ class MarketDataService {
       const volume = Math.floor(Math.random() * 1500) + 100;
 
       const newTick: MarketTick = {
-        id: ticks.length + newTicks.length + 1,
+        id: nextId + newTicks.length,
         symbol: item.symbol,
         price: state.price,
         volume,

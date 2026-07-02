@@ -1,13 +1,10 @@
-import fs from "fs";
-import path from "path";
-
-const DATA_DIR = path.join(process.cwd(), "backend", "data");
-const DB_FILE = path.join(DATA_DIR, "db.json");
-
-// Ensure data directory exists
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-}
+const TABLE_LIMITS = {
+  market_ticks: 300,
+  signals: 120,
+  paper_trades: 200,
+  risk_logs: 120,
+  daily_summary: 60,
+} as const;
 
 export interface WatchlistItem {
   id: number;
@@ -100,30 +97,38 @@ class LocalDB {
   private data: DatabaseSchema;
 
   constructor() {
-    this.data = this.load();
+    this.data = this.createDefaultData();
   }
 
-  private load(): DatabaseSchema {
-    try {
-      if (fs.existsSync(DB_FILE)) {
-        const raw = fs.readFileSync(DB_FILE, "utf-8");
-        const parsed = JSON.parse(raw);
-        // Ensure all keys exist
-        return { ...DEFAULT_DB, ...parsed };
-      }
-    } catch (e) {
-      console.error("Failed to load local DB, resetting to defaults:", e);
-    }
-    this.save(DEFAULT_DB);
+  private createDefaultData(): DatabaseSchema {
     return JSON.parse(JSON.stringify(DEFAULT_DB));
   }
 
-  private save(data: DatabaseSchema) {
-    try {
-      fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf-8");
-    } catch (e) {
-      console.error("Failed to save local DB:", e);
-    }
+  private compactData(data: DatabaseSchema): DatabaseSchema {
+    return {
+      ...data,
+      market_ticks: this.takeLast(data.market_ticks, TABLE_LIMITS.market_ticks),
+      signals: this.takeLast(data.signals, TABLE_LIMITS.signals),
+      paper_trades: this.compactTrades(data.paper_trades),
+      risk_logs: this.takeLast(data.risk_logs, TABLE_LIMITS.risk_logs),
+      daily_summary: this.takeLast(data.daily_summary, TABLE_LIMITS.daily_summary),
+    };
+  }
+
+  private compactTrades(trades: PaperTrade[]): PaperTrade[] {
+    const openTrades = trades.filter((trade) => trade.status === "OPEN");
+    const closedSlots = Math.max(TABLE_LIMITS.paper_trades - openTrades.length, 0);
+    const recentClosedTrades = this.takeLast(
+      trades.filter((trade) => trade.status === "CLOSED"),
+      closedSlots
+    );
+
+    return [...recentClosedTrades, ...openTrades].sort((a, b) => a.id - b.id);
+  }
+
+  private takeLast<T>(items: T[], limit: number): T[] {
+    if (items.length <= limit) return items;
+    return items.slice(items.length - limit);
   }
 
   public getTable<K extends keyof DatabaseSchema>(table: K): DatabaseSchema[K] {
@@ -132,7 +137,7 @@ class LocalDB {
 
   public updateTable<K extends keyof DatabaseSchema>(table: K, value: DatabaseSchema[K]) {
     this.data[table] = value;
-    this.save(this.data);
+    this.data = this.compactData(this.data);
   }
 
   public getCapital(): number {
@@ -146,11 +151,10 @@ class LocalDB {
   public updateCapitalAndBalance(capital: number, balance: number) {
     this.data.capital = capital;
     this.data.paper_balance = balance;
-    this.save(this.data);
   }
 
   public clearAll() {
-    this.data = JSON.parse(JSON.stringify(DEFAULT_DB));
+    this.data = this.createDefaultData();
     this.data.market_ticks = [];
     this.data.signals = [];
     this.data.paper_trades = [];
@@ -158,7 +162,6 @@ class LocalDB {
     this.data.daily_summary = [];
     this.data.capital = 20000;
     this.data.paper_balance = 20000;
-    this.save(this.data);
   }
 }
 

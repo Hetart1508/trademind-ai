@@ -22,7 +22,6 @@ class RiskManagerService {
    */
   public evaluateTradeRisk(symbol: string): RiskCheckResult {
     const trades = db.getTable("paper_trades");
-    const riskLogs = db.getTable("risk_logs");
     const now = new Date();
     const todayStr = now.toISOString().split("T")[0];
     const monthStr = todayStr.substring(0, 7); // YYYY-MM
@@ -98,8 +97,9 @@ class RiskManagerService {
 
   private logRejection(symbol: string, reason: string) {
     const logs = db.getTable("risk_logs");
+    const nextId = logs.length > 0 ? Math.max(...logs.map((log) => log.id)) + 1 : 1;
     const newLog: RiskLog = {
-      id: logs.length + 1,
+      id: nextId,
       symbol,
       reason,
       created_at: new Date().toISOString(),
