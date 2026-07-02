@@ -36,11 +36,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/health",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "health"]
-            },
+            "url": "{{baseUrl}}/api/health",
             "description": "Returns server status, database row counts, and risk bypass state."
           }
         },
@@ -49,11 +45,7 @@
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/system/tick",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "system", "tick"]
-            },
+            "url": "{{baseUrl}}/api/system/tick",
             "description": "Manually generates a mock market tick and checks open trades."
           }
         },
@@ -62,11 +54,7 @@
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/system/toggle-risk",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "system", "toggle-risk"]
-            },
+            "url": "{{baseUrl}}/api/system/toggle-risk",
             "description": "Toggles trading-hours risk constraint bypass."
           }
         },
@@ -75,11 +63,7 @@
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/system/reset",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "system", "reset"]
-            },
+            "url": "{{baseUrl}}/api/system/reset",
             "description": "Clears the local JSON database and resets initial state."
           }
         }
@@ -93,11 +77,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/watchlist",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "watchlist"]
-            },
+            "url": "{{baseUrl}}/api/watchlist",
             "description": "Lists all watched symbols."
           }
         },
@@ -120,11 +100,7 @@
                 }
               }
             },
-            "url": {
-              "raw": "{{baseUrl}}/api/watchlist",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "watchlist"]
-            },
+            "url": "{{baseUrl}}/api/watchlist",
             "description": "Adds a symbol to the watchlist."
           }
         },
@@ -133,11 +109,7 @@
           "request": {
             "method": "DELETE",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/watchlist/{{symbol}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "watchlist", "{{symbol}}"]
-            },
+            "url": "{{baseUrl}}/api/watchlist/{{symbol}}",
             "description": "Removes a symbol from the watchlist."
           }
         }
@@ -151,11 +123,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/market/live",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "market", "live"]
-            },
+            "url": "{{baseUrl}}/api/market/live",
             "description": "Returns current mock-live prices for watched symbols."
           }
         },
@@ -164,17 +132,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/market/ticks/{{symbol}}?limit={{tickLimit}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "market", "ticks", "{{symbol}}"],
-              "query": [
-                {
-                  "key": "limit",
-                  "value": "{{tickLimit}}"
-                }
-              ]
-            },
+            "url": "{{baseUrl}}/api/market/ticks/{{symbol}}?limit={{tickLimit}}",
             "description": "Returns historical tick data for a symbol."
           }
         }
@@ -188,11 +146,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/signals",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "signals"]
-            },
+            "url": "{{baseUrl}}/api/signals",
             "description": "Lists generated strategy signals."
           }
         },
@@ -201,11 +155,7 @@
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/signals/generate",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "signals", "generate"]
-            },
+            "url": "{{baseUrl}}/api/signals/generate",
             "description": "Manually scans the watchlist and generates strategy signals."
           }
         }
@@ -219,11 +169,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/paper-trades",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "paper-trades"]
-            },
+            "url": "{{baseUrl}}/api/paper-trades",
             "description": "Lists all paper trades."
           }
         },
@@ -232,11 +178,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/paper-trades/open",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "paper-trades", "open"]
-            },
+            "url": "{{baseUrl}}/api/paper-trades/open",
             "description": "Lists open paper trades."
           }
         },
@@ -245,11 +187,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/paper-trades/closed",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "paper-trades", "closed"]
-            },
+            "url": "{{baseUrl}}/api/paper-trades/closed",
             "description": "Lists closed paper trades."
           }
         },
@@ -258,11 +196,7 @@
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/paper-trades/manual-exit/{{tradeId}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "paper-trades", "manual-exit", "{{tradeId}}"]
-            },
+            "url": "{{baseUrl}}/api/paper-trades/manual-exit/{{tradeId}}",
             "description": "Manually exits an open paper trade by trade ID."
           }
         }
@@ -276,11 +210,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/dashboard/summary",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "dashboard", "summary"]
-            },
+            "url": "{{baseUrl}}/api/dashboard/summary",
             "description": "Returns dashboard summary metrics."
           }
         },
@@ -289,11 +219,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/dashboard/analytics",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "dashboard", "analytics"]
-            },
+            "url": "{{baseUrl}}/api/dashboard/analytics",
             "description": "Returns dashboard analytics data."
           }
         }
@@ -307,11 +233,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/risk-logs",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "risk-logs"]
-            },
+            "url": "{{baseUrl}}/api/risk-logs",
             "description": "Lists risk manager approval and rejection logs."
           }
         }
