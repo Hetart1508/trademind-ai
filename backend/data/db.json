@@ -5451,6 +5451,76 @@
       "price": 956.51,
       "volume": 1410,
       "created_at": "2026-07-02T15:47:04.299Z"
+    },
+    {
+      "id": 776,
+      "symbol": "RELIANCE",
+      "price": 2468.14,
+      "volume": 966,
+      "created_at": "2026-07-02T15:47:09.301Z"
+    },
+    {
+      "id": 777,
+      "symbol": "TCS",
+      "price": 3428.71,
+      "volume": 1394,
+      "created_at": "2026-07-02T15:47:09.301Z"
+    },
+    {
+      "id": 778,
+      "symbol": "INFY",
+      "price": 1452.65,
+      "volume": 640,
+      "created_at": "2026-07-02T15:47:09.301Z"
+    },
+    {
+      "id": 779,
+      "symbol": "HDFCBANK",
+      "price": 1599.28,
+      "volume": 1585,
+      "created_at": "2026-07-02T15:47:09.301Z"
+    },
+    {
+      "id": 780,
+      "symbol": "ICICIBANK",
+      "price": 955.6,
+      "volume": 520,
+      "created_at": "2026-07-02T15:47:09.301Z"
+    },
+    {
+      "id": 781,
+      "symbol": "RELIANCE",
+      "price": 2469.17,
+      "volume": 445,
+      "created_at": "2026-07-02T15:47:14.301Z"
+    },
+    {
+      "id": 782,
+      "symbol": "TCS",
+      "price": 3429.99,
+      "volume": 345,
+      "created_at": "2026-07-02T15:47:14.301Z"
+    },
+    {
+      "id": 783,
+      "symbol": "INFY",
+      "price": 1450.48,
+      "volume": 1096,
+      "created_at": "2026-07-02T15:47:14.301Z"
+    },
+    {
+      "id": 784,
+      "symbol": "HDFCBANK",
+      "price": 1601.46,
+      "volume": 243,
+      "created_at": "2026-07-02T15:47:14.301Z"
+    },
+    {
+      "id": 785,
+      "symbol": "ICICIBANK",
+      "price": 954.9,
+      "volume": 122,
+      "created_at": "2026-07-02T15:47:14.301Z"
     }
   ],
   "signals": [
@@ -6153,6 +6223,56 @@
       "reason": "EMA 9 (₹955) is above EMA 21 (₹954.23) indicating strong upward momentum. RSI of 58.82 is in the optimal bullish buy zone, and price ₹955.14 is supported above VWAP (₹951.4).",
       "strategy_name": "EMA-RSI-VWAP-Intraday",
       "created_at": "2026-07-02T15:46:39.252Z"
+    },
+    {
+      "id": 71,
+      "symbol": "RELIANCE",
+      "signal_type": "BUY",
+      "price": 2469.46,
+      "confidence_score": 82,
+      "reason": "EMA 9 (₹2468.73) is above EMA 21 (₹2465.38) indicating strong upward momentum. RSI of 63.85 is in the optimal bullish buy zone, and price ₹2469.46 is supported above VWAP (₹2455.79).",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:47:09.247Z"
+    },
+    {
+      "id": 72,
+      "symbol": "TCS",
+      "signal_type": "HOLD",
+      "price": 3433.61,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:47:09.252Z"
+    },
+    {
+      "id": 73,
+      "symbol": "INFY",
+      "signal_type": "BUY",
+      "price": 1450.95,
+      "confidence_score": 85,
+      "reason": "EMA 9 (₹1450.58) is above EMA 21 (₹1449.11) indicating strong upward momentum. RSI of 57.1 is in the optimal bullish buy zone, and price ₹1450.95 is supported above VWAP (₹1449.69).",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:47:09.254Z"
+    },
+    {
+      "id": 74,
+      "symbol": "HDFCBANK",
+      "signal_type": "SELL",
+      "price": 1599.4,
+      "confidence_score": 70,
+      "reason": "EMA 9 (₹1598.92) crossed below EMA 21 (₹1599.31), signaling a bearish trend shift. RSI is currently 49.61.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:47:09.256Z"
+    },
+    {
+      "id": 75,
+      "symbol": "ICICIBANK",
+      "signal_type": "HOLD",
+      "price": 956.51,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:47:09.257Z"
     }
   ],
   "paper_trades": [
@@ -6201,6 +6321,18 @@
       "symbol": "ICICIBANK",
       "reason": "MAX_DAILY_TRADES_LIMIT_REACHED",
       "created_at": "2026-07-02T15:46:39.254Z"
+    },
+    {
+      "id": 3,
+      "symbol": "RELIANCE",
+      "reason": "MAX_DAILY_TRADES_LIMIT_REACHED",
+      "created_at": "2026-07-02T15:47:09.251Z"
+    },
+    {
+      "id": 4,
+      "symbol": "INFY",
+      "reason": "MAX_DAILY_TRADES_LIMIT_REACHED",
+      "created_at": "2026-07-02T15:47:09.255Z"
     }
   ],
   "daily_summary": [
