@@ -5836,6 +5836,76 @@
       "price": 955.41,
       "volume": 743,
       "created_at": "2026-07-02T15:47:59.315Z"
+    },
+    {
+      "id": 831,
+      "symbol": "RELIANCE",
+      "price": 2471.52,
+      "volume": 342,
+      "created_at": "2026-07-02T15:48:04.315Z"
+    },
+    {
+      "id": 832,
+      "symbol": "TCS",
+      "price": 3441.32,
+      "volume": 269,
+      "created_at": "2026-07-02T15:48:04.315Z"
+    },
+    {
+      "id": 833,
+      "symbol": "INFY",
+      "price": 1451.78,
+      "volume": 1274,
+      "created_at": "2026-07-02T15:48:04.315Z"
+    },
+    {
+      "id": 834,
+      "symbol": "HDFCBANK",
+      "price": 1611.06,
+      "volume": 1533,
+      "created_at": "2026-07-02T15:48:04.315Z"
+    },
+    {
+      "id": 835,
+      "symbol": "ICICIBANK",
+      "price": 956.44,
+      "volume": 525,
+      "created_at": "2026-07-02T15:48:04.315Z"
+    },
+    {
+      "id": 836,
+      "symbol": "RELIANCE",
+      "price": 2472.67,
+      "volume": 1328,
+      "created_at": "2026-07-02T15:48:09.317Z"
+    },
+    {
+      "id": 837,
+      "symbol": "TCS",
+      "price": 3437.71,
+      "volume": 1245,
+      "created_at": "2026-07-02T15:48:09.317Z"
+    },
+    {
+      "id": 838,
+      "symbol": "INFY",
+      "price": 1451.88,
+      "volume": 1352,
+      "created_at": "2026-07-02T15:48:09.317Z"
+    },
+    {
+      "id": 839,
+      "symbol": "HDFCBANK",
+      "price": 1612.46,
+      "volume": 779,
+      "created_at": "2026-07-02T15:48:09.317Z"
+    },
+    {
+      "id": 840,
+      "symbol": "ICICIBANK",
+      "price": 957.52,
+      "volume": 504,
+      "created_at": "2026-07-02T15:48:09.317Z"
     }
   ],
   "signals": [
@@ -6638,6 +6708,56 @@
       "reason": "Market indicators are in consolidation. No clear direction.",
       "strategy_name": "EMA-RSI-VWAP-Intraday",
       "created_at": "2026-07-02T15:47:39.259Z"
+    },
+    {
+      "id": 81,
+      "symbol": "RELIANCE",
+      "signal_type": "HOLD",
+      "price": 2471.52,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:48:09.256Z"
+    },
+    {
+      "id": 82,
+      "symbol": "TCS",
+      "signal_type": "HOLD",
+      "price": 3441.32,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:48:09.259Z"
+    },
+    {
+      "id": 83,
+      "symbol": "INFY",
+      "signal_type": "HOLD",
+      "price": 1451.78,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:48:09.261Z"
+    },
+    {
+      "id": 84,
+      "symbol": "HDFCBANK",
+      "signal_type": "HOLD",
+      "price": 1611.06,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:48:09.262Z"
+    },
+    {
+      "id": 85,
+      "symbol": "ICICIBANK",
+      "signal_type": "HOLD",
+      "price": 956.44,
+      "confidence_score": 50,
+      "reason": "Market indicators are in consolidation. No clear direction.",
+      "strategy_name": "EMA-RSI-VWAP-Intraday",
+      "created_at": "2026-07-02T15:48:09.263Z"
     }
   ],
   "paper_trades": [
