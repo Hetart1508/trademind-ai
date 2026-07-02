@@ -1,0 +1,321 @@
+{
+  "info": {
+    "name": "TradeMind AI API",
+    "_postman_id": "8b4f8d9f-c9e0-4e7a-9c2f-3fb4e0530a01",
+    "description": "Postman collection for testing the local TradeMind AI API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "symbol",
+      "value": "RELIANCE",
+      "type": "string"
+    },
+    {
+      "key": "tradeId",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "tickLimit",
+      "value": "50",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            },
+            "description": "Returns server status, database row counts, and risk bypass state."
+          }
+        },
+        {
+          "name": "Manual Market Tick",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/system/tick",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "system", "tick"]
+            },
+            "description": "Manually generates a mock market tick and checks open trades."
+          }
+        },
+        {
+          "name": "Toggle Risk Time Bypass",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/system/toggle-risk",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "system", "toggle-risk"]
+            },
+            "description": "Toggles trading-hours risk constraint bypass."
+          }
+        },
+        {
+          "name": "Reset System Database",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/system/reset",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "system", "reset"]
+            },
+            "description": "Clears the local JSON database and resets initial state."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Watchlist",
+      "item": [
+        {
+          "name": "Get Watchlist",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/watchlist",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "watchlist"]
+            },
+            "description": "Lists all watched symbols."
+          }
+        },
+        {
+          "name": "Add Symbol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"{{symbol}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/watchlist",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "watchlist"]
+            },
+            "description": "Adds a symbol to the watchlist."
+          }
+        },
+        {
+          "name": "Remove Symbol",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/watchlist/{{symbol}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "watchlist", "{{symbol}}"]
+            },
+            "description": "Removes a symbol from the watchlist."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Market Data",
+      "item": [
+        {
+          "name": "Get Live Prices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/market/live",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "market", "live"]
+            },
+            "description": "Returns current mock-live prices for watched symbols."
+          }
+        },
+        {
+          "name": "Get Symbol Ticks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/market/ticks/{{symbol}}?limit={{tickLimit}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "market", "ticks", "{{symbol}}"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "{{tickLimit}}"
+                }
+              ]
+            },
+            "description": "Returns historical tick data for a symbol."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Signals",
+      "item": [
+        {
+          "name": "Get Signals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/signals",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "signals"]
+            },
+            "description": "Lists generated strategy signals."
+          }
+        },
+        {
+          "name": "Generate Signals",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/signals/generate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "signals", "generate"]
+            },
+            "description": "Manually scans the watchlist and generates strategy signals."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Paper Trades",
+      "item": [
+        {
+          "name": "Get All Paper Trades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paper-trades",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "paper-trades"]
+            },
+            "description": "Lists all paper trades."
+          }
+        },
+        {
+          "name": "Get Open Paper Trades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paper-trades/open",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "paper-trades", "open"]
+            },
+            "description": "Lists open paper trades."
+          }
+        },
+        {
+          "name": "Get Closed Paper Trades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paper-trades/closed",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "paper-trades", "closed"]
+            },
+            "description": "Lists closed paper trades."
+          }
+        },
+        {
+          "name": "Manual Exit Trade",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paper-trades/manual-exit/{{tradeId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "paper-trades", "manual-exit", "{{tradeId}}"]
+            },
+            "description": "Manually exits an open paper trade by trade ID."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Get Dashboard Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard/summary",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "dashboard", "summary"]
+            },
+            "description": "Returns dashboard summary metrics."
+          }
+        },
+        {
+          "name": "Get Dashboard Analytics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard/analytics",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "dashboard", "analytics"]
+            },
+            "description": "Returns dashboard analytics data."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Risk",
+      "item": [
+        {
+          "name": "Get Risk Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/risk-logs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "risk-logs"]
+            },
+            "description": "Lists risk manager approval and rejection logs."
+          }
+        }
+      ]
+    }
+  ]
+}
