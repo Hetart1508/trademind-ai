@@ -5906,6 +5906,146 @@
       "price": 957.52,
       "volume": 504,
       "created_at": "2026-07-02T15:48:09.317Z"
+    },
+    {
+      "id": 841,
+      "symbol": "RELIANCE",
+      "price": 2475.31,
+      "volume": 1214,
+      "created_at": "2026-07-02T15:48:14.318Z"
+    },
+    {
+      "id": 842,
+      "symbol": "TCS",
+      "price": 3438.32,
+      "volume": 683,
+      "created_at": "2026-07-02T15:48:14.318Z"
+    },
+    {
+      "id": 843,
+      "symbol": "INFY",
+      "price": 1449.95,
+      "volume": 263,
+      "created_at": "2026-07-02T15:48:14.318Z"
+    },
+    {
+      "id": 844,
+      "symbol": "HDFCBANK",
+      "price": 1611.6,
+      "volume": 798,
+      "created_at": "2026-07-02T15:48:14.318Z"
+    },
+    {
+      "id": 845,
+      "symbol": "ICICIBANK",
+      "price": 958.62,
+      "volume": 1489,
+      "created_at": "2026-07-02T15:48:14.318Z"
+    },
+    {
+      "id": 846,
+      "symbol": "RELIANCE",
+      "price": 2477.93,
+      "volume": 529,
+      "created_at": "2026-07-02T15:48:19.319Z"
+    },
+    {
+      "id": 847,
+      "symbol": "TCS",
+      "price": 3435.39,
+      "volume": 150,
+      "created_at": "2026-07-02T15:48:19.319Z"
+    },
+    {
+      "id": 848,
+      "symbol": "INFY",
+      "price": 1448.87,
+      "volume": 348,
+      "created_at": "2026-07-02T15:48:19.319Z"
+    },
+    {
+      "id": 849,
+      "symbol": "HDFCBANK",
+      "price": 1613.13,
+      "volume": 1156,
+      "created_at": "2026-07-02T15:48:19.319Z"
+    },
+    {
+      "id": 850,
+      "symbol": "ICICIBANK",
+      "price": 958.72,
+      "volume": 1339,
+      "created_at": "2026-07-02T15:48:19.319Z"
+    },
+    {
+      "id": 851,
+      "symbol": "RELIANCE",
+      "price": 2476.4,
+      "volume": 1578,
+      "created_at": "2026-07-02T15:48:24.321Z"
+    },
+    {
+      "id": 852,
+      "symbol": "TCS",
+      "price": 3430.79,
+      "volume": 939,
+      "created_at": "2026-07-02T15:48:24.321Z"
+    },
+    {
+      "id": 853,
+      "symbol": "INFY",
+      "price": 1449.01,
+      "volume": 1557,
+      "created_at": "2026-07-02T15:48:24.321Z"
+    },
+    {
+      "id": 854,
+      "symbol": "HDFCBANK",
+      "price": 1612.94,
+      "volume": 473,
+      "created_at": "2026-07-02T15:48:24.321Z"
+    },
+    {
+      "id": 855,
+      "symbol": "ICICIBANK",
+      "price": 957.51,
+      "volume": 153,
+      "created_at": "2026-07-02T15:48:24.321Z"
+    },
+    {
+      "id": 856,
+      "symbol": "RELIANCE",
+      "price": 2478.75,
+      "volume": 910,
+      "created_at": "2026-07-02T15:48:29.323Z"
+    },
+    {
+      "id": 857,
+      "symbol": "TCS",
+      "price": 3426.92,
+      "volume": 224,
+      "created_at": "2026-07-02T15:48:29.323Z"
+    },
+    {
+      "id": 858,
+      "symbol": "INFY",
+      "price": 1448.37,
+      "volume": 1229,
+      "created_at": "2026-07-02T15:48:29.323Z"
+    },
+    {
+      "id": 859,
+      "symbol": "HDFCBANK",
+      "price": 1612.28,
+      "volume": 1197,
+      "created_at": "2026-07-02T15:48:29.323Z"
+    },
+    {
+      "id": 860,
+      "symbol": "ICICIBANK",
+      "price": 956.9,
+      "volume": 1068,
+      "created_at": "2026-07-02T15:48:29.323Z"
     }
   ],
   "signals": [
